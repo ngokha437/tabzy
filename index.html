@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./src/tabzy.css" />
+    <style>
+      .tabzy--active a {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <!-- Container -->
@@ -26,9 +31,33 @@
     <div id="tab2">Tab2 content</div>
     <div id="tab3">Tab3 content</div>
 
+    <ul id="tabs2">
+      <!-- Tabs -->
+      <li>
+        <a href="#tabA">Tab A</a>
+      </li>
+      <li>
+        <a href="#tabB">Tab B</a>
+      </li>
+      <li>
+        <a href="#tabC">Tab C</a>
+      </li>
+    </ul>
+
+    <!-- Panels -->
+    <div id="tabA">TabA content</div>
+    <div id="tabB">TabB content</div>
+    <div id="tabC">TabC content</div>
+
     <script src="./src/tabzy.js"></script>
     <script>
-      const tabs = new Tabzy("#tabs");
+      const tabs1 = new Tabzy("#tabs", {
+        remember: true,
+      });
+
+      const tabs2 = new Tabzy("#tabs2", {
+        remember: true,
+      });
     </script>
   </body>
 </html>
